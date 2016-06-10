@@ -1,7 +1,7 @@
 Just a backup repository for my personal configuration files.
 
 - [x] Vim
-- [ ] Zsh
+- [x] Zsh
 - [ ] Xorg
 - [ ] i3wm
 
