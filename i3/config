@@ -1,0 +1,139 @@
+
+# default modifier key - winkey/superkey
+set $mod Mod4
+
+# default font
+font pango: Fixed 9
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Xterm as default terminal
+bindsym $mod+Return exec uxterm
+
+# Killing windows with sigterm
+bindsym $mod+c kill
+
+# dmenu rocks!
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exit
+
+# resize
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# i3bar configuration
+bar {
+        status_command i3blocks -c /home/paulo/.i3blocks/i3blocks.conf
+        font pango: Fixed 9
+        tray_output none
+        colors {
+                background #000000
+                statusline #999999
+                separator  #444444
+                focused_workspace  #ffffff #444444 #ffffff
+                active_workspace   #ffffff #222222 #ffffff
+                inactive_workspace #888888 #222222 #888888
+                urgent_workspace   #ffffff #900000 #ffffff
+        }
+}
+
+# class                 border  backgr. text    indicator
+client.focused          #666666 #444444 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# lock screen
+bindsym $mod+l exec i3lock -c 000000
+
+# helps a lot!
+hide_edge_borders vertical
+workspace_auto_back_and_forth yes
+
+# keybindings for alsa
+bindsym XF86AudioMute exec "amixer -q sset Master toggle"
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 2%+"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master 2%-"
+# cmus
+bindsym $mod+KP_4 exec cmus-remote --prev
+bindsym $mod+KP_5 exec cmus-remote --pause
+bindsym $mod+KP_6 exec cmus-remote --next
+# and scrot
+bindsym Print exec scrot -e 'mv $f ~/screenshots/'
+
+# window-specific preferences
+for_window [class="Firefox"] border none
+for_window [class="chromium"] border none
+for_window [class="XTerm"] border 1pixel
+for_window [class="libreoffice"] border none
