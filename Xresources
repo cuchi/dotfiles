@@ -1,0 +1,41 @@
+! Bitmap font with powerline support
+XTerm*font  : -*-tamzenforpowerline-medium-*-*-*-14-*-*-*-*-*-*-*
+XTerm*font1 : -*-tamzenforpowerline-medium-*-*-*-9-*-*-*-*-*-*-*
+XTerm*font2 : -*-tamzenforpowerline-medium-*-*-*-12-*-*-*-*-*-*-*
+XTerm*font3 : -*-tamzenforpowerline-medium-*-*-*-13-*-*-*-*-*-*-*
+XTerm*font4 : -*-tamzenforpowerline-medium-*-*-*-15-*-*-*-*-*-*-*
+XTerm*font5 : -*-tamzenforpowerline-medium-*-*-*-16-*-*-*-*-*-*-*
+XTerm*font6 : -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
+
+! Tango color palette for xterm
+xterm*background:         #111111
+xterm*foreground:         #eeeeec
+! underline
+xterm*colorUL:            #8ae234
+! line color for underline
+xterm*underlineColor:     #92659a
+! black dark/light
+xterm*color0:             #2e3436
+xterm*color8:             #6e706b
+! red dark/light
+xterm*color1:             #cc0000
+xterm*color9:             #ef2929
+! green dark/light
+xterm*color2:             #4e9a06
+xterm*color10:            #8ae234
+! yellow dark/light
+xterm*color3:             #edd400
+xterm*color11:            #fce94f
+! blue dark/light
+xterm*color4:             #3465a4
+xterm*color12:            #729fcf
+! magenta dark/light
+xterm*color5:             #92659a
+xterm*color13:            #c19fbe
+! cyan dark/light
+xterm*color6:             #07c7ca
+xterm*color14:            #63e9e9
+! white dark/light
+xterm*color7:             #d3d7cf
+xterm*color15:            #eeeeec
+
