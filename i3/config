@@ -9,7 +9,7 @@ font pango: Fixed 9
 floating_modifier $mod
 
 # Xterm as default terminal
-bindsym $mod+Return exec uxterm
+bindsym $mod+Return exec xterm
 
 # Killing windows with sigterm
 bindsym $mod+c kill
@@ -94,7 +94,7 @@ bindsym $mod+r mode "resize"
 
 # i3bar configuration
 bar {
-        status_command i3blocks -c /home/paulo/.i3blocks/i3blocks.conf
+        status_command i3blocks
         font pango: Fixed 9
         tray_output none
         colors {
@@ -137,3 +137,6 @@ for_window [class="Firefox"] border none
 for_window [class="chromium"] border none
 for_window [class="XTerm"] border 1pixel
 for_window [class="libreoffice"] border none
+
+# autostart
+exec --no-startup-id "dunst -config ~/.dunstrc"
