@@ -1,8 +1,8 @@
 
-export ZSH=/home/paulo/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Fucking awesome theme
-ZSH_THEME="kphoen"
+ZSH_THEME="agnoster"
 
 # Meh
 DISABLE_AUTO_UPDATE="true"
