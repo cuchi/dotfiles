@@ -16,8 +16,9 @@ files_to_backup=(
     .Xresources
 )
 
-for file in $files_to_backup; do
-    mv $HOME/$file $backup_dir 2> /dev/null
+for file in ${files_to_backup[@]}; do
+    echo -n "Making backup for old $file... "
+    mv $HOME/$file $backup_dir 2> /dev/null && echo "done!" || echo "not found, skipping..."
 done
 
 # Copying new dotfiles
@@ -30,7 +31,7 @@ files_to_copy=(
     Xresources
 )
 
-for file in $files_to_copy; do
+for file in ${files_to_copy[@]}; do
     cp $DIR/$file $HOME/.$file -rv
 done
 
