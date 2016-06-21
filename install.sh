@@ -43,6 +43,11 @@ for file in ${files_to_copy[@]}; do
     cp $DIR/$file $HOME/.$file -rv
 done
 
+# Installing Vundle plugins
+vim +PluginInstall +qall
+# Not using zsh yet? let me change that for you!
+[ $SHELL = /bin/zsh ] || chsh -s /bin/zsh
+
 echo "Everything is set, enjoy!"
 
 exit 0
