@@ -1,8 +1,9 @@
-Just a backup repository for my personal configuration files.
+Just a backup repository for my personal workspace configuration files, which aggregate files for:
 
-- [x] Vim
-- [x] Zsh
-- [x] Xorg
-- [x] i3wm
+* Vim
+* Zsh
+* Xorg
+* i3wm
+* Dunst
 
-...and other stuff that I'll put here when I remember.
+Works very well on my 5 year old laptop, but might need some tweaking before using in another machine :).
