@@ -9,11 +9,16 @@ backup_dir=$HOME/.dotfiles_backup
 
 files_to_backup=(
     .vim*
-    .zsh*
-    .i3*
+    .zshrc
+    .zsh_history
+    .zsh-update
+    .i3
+    .i3blocks
+    .i3blocks.conf
     .dunstrc
     .xinitrc
     .Xresources
+    .config/htop/htoprc
 )
 
 for file in ${files_to_backup[@]}; do
@@ -33,10 +38,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 files_to_copy=(
     vimrc
     zshrc
-    i3*
+    i3
+    i3blocks
+    i3blocks.conf
     dunstrc
     xinitrc
     Xresources
+    config/htop/htoprc
 )
 
 for file in ${files_to_copy[@]}; do
