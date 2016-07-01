@@ -3,7 +3,7 @@
 set $mod Mod4
 
 # default font
-font pango: Fixed 9
+font pango: Terminus 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -48,12 +48,18 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+set $w1 "Browsing"
+set $w2 "Shells"
+set $w3 "Dev Main"
+set $w4 "Music"
+set $w5 "Dev Aux"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+apostrophe workspace $w5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -61,11 +67,11 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+apostrophe move container to workspace $w5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -94,8 +100,8 @@ bindsym $mod+r mode "resize"
 
 # i3bar configuration
 bar {
-        status_command i3blocks
-        font pango: Fixed 9
+        status_command /home/paulo/src/i3blocks/i3blocks
+        font pango: Terminus 9
         tray_output none
         colors {
                 background #000000
@@ -137,6 +143,17 @@ for_window [class="Firefox"] border none
 for_window [class="chromium"] border none
 for_window [class="XTerm"] border 1pixel
 for_window [class="libreoffice"] border none
+for_window [class="jetbrains-studio"] border none
+
+assign [class="chromium"] $w1
+assign [class="jetbrains-studio"] $w3
 
 # autostart
 exec --no-startup-id "dunst -config ~/.dunstrc"
+
+# Workspace definitions
+workspace $w1 output VGA1
+workspace $w2 output HDMI1
+workspace $w3 output HDMI1
+workspace $w4 output VGA1
+workspace $w5 output VGA1
