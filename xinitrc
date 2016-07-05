@@ -7,6 +7,6 @@ xset fp rehash
 # Fonts and colors for xterm
 xrdb .Xresources
 
-xrandr --output HDMI1 --auto --right-of VGA1
+xrandr --output VGA1 --auto --output HDMI1 --auto --right-of VGA1
 
 exec i3
